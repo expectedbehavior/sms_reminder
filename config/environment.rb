@@ -19,6 +19,8 @@ RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+  config.gem 'capybara'
+  config.gem 'factory_girl', :source => 'http://gemcutter.org'
   
   config.action_controller.session = { :session_key => "_pepsi_refresh_reminder_session", :secret => '15ec68877fd0f760359729ab040ac9800a9b8ec3824b59cb5692d972b93f4cedfe187b1dbba7f8469e59e961466050f6ce62fbd322da0ce45a215acceee1d0d6'}
   # Settings in config/environments/* take precedence over those specified here.
