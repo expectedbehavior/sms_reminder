@@ -1,3 +1,15 @@
+OSX_JAVA_HOME = "/System/Library/Frameworks/JavaVM.framework/Home"
+UBUNTU_JAVA_HOME = "/usr/lib/jvm/java-1.5.0-sun"
+
+if File.exists?(OSX_JAVA_HOME)
+  ENV["JAVA_HOME"] = OSX_JAVA_HOME
+elsif File.exists?(UBUNTU_JAVA_HOME)
+  ENV["JAVA_HOME"] = UBUNTU_JAVA_HOME
+end 
+
+ENV['PATH'] ||= ""
+ENV['PATH'] = ENV['PATH'] + ":" + File.join(File.dirname(__FILE__), '..', 'vendor', 'jruby-1.4.0', 'bin')
+
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
