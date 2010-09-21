@@ -10,9 +10,17 @@ class Reminder < ActiveRecord::Base
   
   def notify_of_succesful_subscription
     message = "Thanks for subscribing! You'll be reminded to vote once per day until the contest ends."
-    
     Twilio.connect(ACCOUNT_SID, ACCOUNT_TOKEN)
     Twilio::Sms.message(CALLER_ID, self.phone_number, message)    
   end 
+  
+  def self.notify_all_subscribers
+    message = "Text* 101949 to Pepsi (73774) to help Community First Initiative!"
+    self.all.each do |r|
+      Twilio.connect(ACCOUNT_SID, ACCOUNT_TOKEN)
+      Twilio::Sms.message(CALLER_ID, r.phone_number, message)    
+    end 
+  end 
+
 
 end
