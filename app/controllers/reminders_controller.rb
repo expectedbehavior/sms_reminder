@@ -4,6 +4,7 @@ class RemindersController < ApplicationController
   def index
     phone_number = params["From"]
     @reminder = Reminder.find_by_phone_number(phone_number)
+    raise phone_number.inspect
     
     if @reminder
       @reminder.notify_already_subscribed
