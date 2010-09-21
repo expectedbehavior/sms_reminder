@@ -3,7 +3,7 @@ class RemindersController < ApplicationController
   # GET /reminders.xml
   def index
     @reminders = Reminder.all
-
+    raise "what's going on? "
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @reminders }
