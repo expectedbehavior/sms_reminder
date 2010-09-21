@@ -19,7 +19,7 @@ class Reminder < ActiveRecord::Base
     resp.error! unless resp.kind_of? Net::HTTPSuccess
     resp
   end 
-  alias :notify_of_succesful_subscription :notify_already_subscribed
+#  alias :notify_of_succesful_subscription :notify_already_subscribed
 
 
 end
