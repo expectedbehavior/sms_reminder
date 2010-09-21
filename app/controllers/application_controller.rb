@@ -3,7 +3,6 @@
 
 class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user
-  include ExceptionNotifiable
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
