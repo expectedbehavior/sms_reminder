@@ -1,6 +1,7 @@
 class Reminder < ActiveRecord::Base
-  validates_presence_of :phone_number
-
+  validates_presence_of   :phone_number
+  validates_uniqueness_of :phone_number
+  
   ACCOUNT_SID   = 'AC82cdf2260148c4b64a694548425f2b3f'
   ACCOUNT_TOKEN = '2c597425f56d6a3a1ee706e09dfa7a6d'
   CALLER_ID     = '3175271790'

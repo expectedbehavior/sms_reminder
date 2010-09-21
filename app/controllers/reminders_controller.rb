@@ -51,10 +51,11 @@ class RemindersController < ApplicationController
   # POST /reminders
   # POST /reminders.xml
   def create
-    @reminder = Reminder.new(:phone_number => params["From"])
-
+    @reminder   = Reminder.find_by_phone_number(params["From"])
+    @reminder ||= Reminder.new(:phone_number => params["From"])
+    
     respond_to do |format|
-      if @reminder.save
+      if @reminder.save 
         @reminder.notify_of_succesful_subscription
 #         format.html { redirect_to(@reminder, :notice => 'Reminder was successfully created.') }
 #         format.xml  { render :xml => @reminder, :status => :created, :location => @reminder }
