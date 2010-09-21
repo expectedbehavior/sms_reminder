@@ -1,0 +1,5 @@
+apps:
+    # shorthand: heroku app
+    production: refreshreminder
+    staging: refreshreminder-staging
+    demo: refreshreminder-demo
