@@ -49,6 +49,7 @@ class RemindersController < ApplicationController
   # POST /reminders
   # POST /reminders.xml
   def create
+    raise "hey!"
     @reminder = Reminder.new(:phone_number => params["From"])
 
     respond_to do |format|
