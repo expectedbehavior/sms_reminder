@@ -1,4 +1,6 @@
 class RemindersController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => :create
+  
   # GET /reminders
   # GET /reminders.xml
   def index
