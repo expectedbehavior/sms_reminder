@@ -8,7 +8,8 @@ class RemindersController < ApplicationController
     if @reminder
       @reminder.notify_already_subscribed
     else
-      create # Twilio doesn't seem to actually do REST posting
+      raise "you win!"
+#      create # Twilio doesn't seem to actually do REST posting
     end 
     
 #     respond_to do |format|
