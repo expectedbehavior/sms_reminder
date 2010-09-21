@@ -15,10 +15,10 @@ class Reminder < ActiveRecord::Base
   end 
   
   def self.notify_all_subscribers
-    message = "Text* 101949 to Pepsi (73774) to help Community First Initiative!"
+    message = "Text 101949 to Pepsi (73774) to help Community First Initiative!"
     self.all.each do |r|
       Twilio.connect(ACCOUNT_SID, ACCOUNT_TOKEN)
-      Twilio::Sms.message(CALLER_ID, r.phone_number, message)    
+      Twilio::Sms.message(CALLER_ID, r.phone_number, message)
     end 
   end 
 
