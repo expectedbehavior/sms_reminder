@@ -1,0 +1,12 @@
+<h1>Editing reminder</h1>
+
+<% form_for(@reminder) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @reminder %> |
+<%= link_to 'Back', reminders_path %>
